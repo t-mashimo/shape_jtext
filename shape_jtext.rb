@@ -14,8 +14,8 @@ end
 body=STDIN.read
 body.split(/[\r\n]+/).each{|line|
   line.split(/。/).each{|s|
-    s=s.gsub(/[\(（]\s*([^）\)]*[^）\)\s])\s*[\)）]/,"\n"+'(\1)')
     s=s.gsub(/[\s　]+/,"") if option[:white_space]
+    s=s.gsub(/[\(（]\s*([^）\)]*[^）\)\s])\s*[\)）]/,"\n"+'(\1)')
     print "#{s.to_s.strip}\n"
   }
 }
