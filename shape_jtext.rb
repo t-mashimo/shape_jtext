@@ -5,9 +5,9 @@
 require 'optparse'
 
 option=Hash.new
-ARGV.push("-h") if ARGV.empty?
 OptionParser.new do |opt|
   opt.on('-w', '空白削除')   {|v| option[:white_space] = v}
+  opt.on('-h','--help', 'ヘルプ')   {|v| option[:white_space] = v}
   opt.parse(ARGV)
 end
 
